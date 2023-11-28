@@ -38,4 +38,4 @@ method adjustSessionArguments*(d: ChromeDriver, args: JsonNode, options = %*{}, 
   if d.downloadDir != "":
     args{"capabilities", "alwaysMatch", "goog:chromeOptions", "prefs", "download.default_directory"} = %d.downloadDir
 
-  echo "adjustedArgs: ", args
+  # echo "adjustedArgs: ", args
