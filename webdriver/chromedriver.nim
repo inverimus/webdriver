@@ -11,7 +11,7 @@ method startDriverProcess(d: ChromeDriver) =
   var exe = findExe("chromedriver")
   if exe.len == 0:
     exe = findExe("chromium.chromedriver")
-  d.process = startProcess(exe, args = ["--port=" & $d.port.int])
+  d.process = startProcess(exe)
   sleep(1000)
 
 proc newChromeDriver*(): ChromeDriver =
