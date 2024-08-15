@@ -108,7 +108,7 @@ method getElementText*(d: WebDriver, e: string): Future[string] {.async.} =
   let r = await get(d, "element/" & e & "/text")
   return r.getStr()
 
-method elementClick*(d: WebDriver, e: string) {.async.} =
+method elementClick*(d: WebDriver, e: string) {.async, gcsafe.} =
   discard await post(d, "element/" & e & "/click", %*{})
 
 method adjustSessionArguments*(d: WebDriver, args: JsonNode, options = %*{}, headless: bool) {.base.} = discard
